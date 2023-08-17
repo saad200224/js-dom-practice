@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+</head>
+<body>
+
+    <main>
+
+        <section>
+            <div id="comment-container">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae quia repellat, impedit temporibus rerum ea quibusdam, eos nostrum veritatis harum dolorem officiis nesciunt voluptate! Aut exercitationem blanditiis officiis dolor!</p>
+                <p>Eaque praesentium doloremque beatae. Error quibusdam pariatur debitis. Eaque nemo molestias beatae consequuntur, quos facere, itaque cupiditate nobis, quaerat architecto commodi velit tenetur aspernatur doloribus. Eius ipsum nihil iusto temporibus.</p>
+                <p>Et distinctio autem labore doloribus, at perspiciatis est quam deserunt repellat. Sequi vel, eaque consequatur explicabo tempore natus minima ullam voluptatum perferendis a facere incidunt cumque, dolores repudiandae obcaecati dignissimos.</p>
+            </div>
+            <div>
+                <textarea name="" id="new-comment" cols="60" rows="5">
+
+                </textarea>
+                <br>
+                <button id="btn-post">Post</button>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        document.getElementById('btn-post').addEventListener('click', function(){
+            const commentBox = document.getElementById('new-comment');
+            const newComment = commentBox.value;
+            
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+
+            commentContainer.appendChild(p);
+
+            commentBox.value = '';
+            
+        })
+    </script>
+</body>
+</html>
